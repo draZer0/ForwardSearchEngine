@@ -1,0 +1,249 @@
+@import 'snow'; // Snow Effect
+
+$border_radius: 10px;
+$gap: 40px;
+$color_blue: rgba(5,105,163,1);
+$color_lightblue: rgba(125,205,253,1);
+$anim: .5s;
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgb(5,105,163);
+  background: linear-gradient(158deg, $color_blue 0%, $color_lightblue 100%);
+  height: 100%;
+}
+
+main {
+  padding: $gap*2;
+}
+
+.container {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 1100px;
+  border-radius: $border_radius;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding: $gap;
+
+    img {
+      width: 350px;
+    }
+  }
+
+  .links {
+    display: block;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: $color_blue;
+      padding-right: $gap;
+      padding-left: $gap;
+      border-right: 2px solid $color_lightblue;
+      transition: color $anim;
+    }
+
+    :last-child {
+      border-right: none;
+    }
+
+    :hover {
+      color: $color_lightblue;
+    }
+  }
+
+  .welcome {
+    text-align: center;
+    margin-top: $gap;
+
+    label {
+      font-size: 1.3em;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .searchbar {
+    text-align: center;
+    margin: $gap $gap*2 $gap*2 $gap*2;
+    position: relative;
+
+    input {
+      font-family: 'Crete Round', serif;
+      border: 2px solid $color_lightblue;
+      font-size: 1.4em;
+      padding: $gap/2;
+      border-radius: $gap;
+      color: $color_blue;
+      width: $gap*12;
+      transition: border $anim;
+
+      &:hover {
+        border: 2px solid $color_blue;
+      }
+    }
+
+    button {
+      position:absolute;
+      right: 230px;
+      top: 23px;
+      border: none;
+      background-color: #fff;
+      font-size: 1.4em;
+      color: $color_blue;
+      transition: color $anim;
+
+      &:hover {
+        color: $color_lightblue;
+      }
+    }
+  }
+
+  .social {
+    text-align: center;
+    font-size: 1.3em;
+    padding-bottom: $gap;
+
+    a {
+      text-decoration: none;
+      color: $color_blue;
+      transition: color $anim;
+
+      &:hover {
+        color: $color_lightblue;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .container {
+    width: 800px;
+
+    .links {
+      a {
+        font-size: 0.9em;
+        padding: 0 20px 0 20px;
+      }
+    }
+
+    .searchbar {
+
+      input {
+        width: $gap*8;
+      }
+
+      button {
+        right: 155px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1000px) {
+
+  .container {
+    width: 600px;
+
+    .links {
+      a {
+        padding: 0 9px 0 9px;
+      }
+    }
+
+    .searchbar {
+
+      button {
+        right: 50px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  main {
+    padding: $gap*2 $gap $gap*2 $gap;
+  }
+
+  .container {
+    width: 400px;
+
+    .searchbar {
+
+      input {
+        width: $gap*5;
+      }
+
+      button {
+        right: 8px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  main {
+    padding: $gap $gap/2 0 $gap/2;
+  }
+
+  .container {
+    width: 300px;
+    height: 100%;
+
+    .logo {
+
+      img {
+        width: 250px;
+        max-height: 90px;
+      }
+    }
+
+    .searchbar {
+      margin: $gap;
+
+      input {
+        font-size: 1em;
+        width: $gap*4;
+
+      }
+
+      button {
+        right: 20px;
+        top: 20px;
+        font-size: 1.2em;
+
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+
+  .container {
+    width: 260px;
+
+    .logo {
+
+      img {
+        width: 210px;
+      }
+    }
+
+    .searchbar {
+      margin: $gap/2;
+    }
+  }
+}
