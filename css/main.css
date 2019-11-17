@@ -88,7 +88,12 @@ main {
   justify-content: center;
   padding: 40px;
 }
-.container .logo img {
+.container .logo__img {
+  display: block;
+  width: 350px;
+}
+.container .logo__dark_img {
+  display: none;
   width: 350px;
 }
 .container .links {
@@ -203,6 +208,31 @@ main {
   }
   .container .searchbar button {
     right: 8px;
+  }
+}
+@media (max-width: 800px) and (prefers-color-scheme: dark) {
+  html, body {
+    background: #0569a3;
+    background: linear-gradient(158deg, #292929 0%, #4c4c4c 100%);
+  }
+
+  .container {
+    background-color: #242424;
+  }
+  .container .logo__img {
+    display: none;
+  }
+  .container .logo__dark_img {
+    display: block;
+  }
+  .container .welcome p {
+    color: #fff;
+  }
+  .container .searchbar input {
+    background-color: #242424;
+  }
+  .container .searchbar button {
+    background-color: #242424;
   }
 }
 @media (max-width: 500px) {

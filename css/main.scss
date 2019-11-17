@@ -4,6 +4,9 @@ $border_radius: 10px;
 $gap: 40px;
 $color_blue: rgba(5,105,163,1);
 $color_lightblue: rgba(125,205,253,1);
+$color_dark_blue: rgba(41,41,41,1);
+$color_dark_lightblue: rgba(76,76,76,1);
+$color_dark: rgba(36,36,36,1);
 $anim: .5s;
 
 html, body {
@@ -30,7 +33,13 @@ main {
     justify-content: center;
     padding: $gap;
 
-    img {
+    &__img {
+      display: block;
+      width: 350px;
+    }
+
+    &__dark_img {
+      display: none;
       width: 350px;
     }
   }
@@ -191,6 +200,45 @@ main {
     }
   }
 
+  @media (prefers-color-scheme: dark) {
+    html, body {
+      background: rgb(5,105,163);
+      background: linear-gradient(158deg, $color_dark_blue 0%, $color_dark_lightblue 100%);
+    }
+
+    .container {
+      background-color: $color_dark;
+
+      .logo {
+
+        &__img {
+          display: none;
+        }
+
+        &__dark_img {
+          display: block;
+        }
+      }
+
+      .welcome {
+
+        p {
+          color: #fff;
+        }
+      }
+
+      .searchbar {
+
+        input {
+          background-color: $color_dark;
+        }
+
+        button {
+          background-color: $color_dark;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 500px) {
